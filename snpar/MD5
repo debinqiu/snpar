@@ -1,0 +1,17 @@
+e827bab84eeeec4a8d87bef79bc85e23 *DESCRIPTION
+a5ee16b6e1d405d44310eb10a9090b5f *NAMESPACE
+0faa0f3f3c3a198972a49da85975d26a *R/KS.test.R
+98e498254ba3165e674520a4cac332a4 *R/cs.test.R
+ad212770b51e7d9f1bde93043a91ad83 *R/kde.R
+59c429eb1f30130a5fbf2beaaa344047 *R/kre.R
+3643825e6ddef6ec0e323382722d851c *R/ns.test.R
+9ebc58c92a266b57ecc05967faf5d374 *R/quant.test.R
+c32a55fbdb9654924f9389affe3d5e29 *R/runs.test.R
+e78b2c4176f240613b2c7f1c113dee74 *man/KS.test.Rd
+2b17dc7942bd04da79605c2505b99e54 *man/cs.test.Rd
+1a409a0e1c89e9d59f27c8b0eeb2bdbe *man/kde.Rd
+235a3222bc44e895cd89090eab8c53ac *man/kre.Rd
+2dda7f09b4963cf8471e4c89d6d7e698 *man/ns.test.Rd
+a20982e9077baa5656b98d5a420839e7 *man/quant.test.Rd
+3c154ec736df1d5238f6208871b9d206 *man/runs.test.Rd
+d7fea75c022b69d6903b7f36090783a4 *man/snpar-package.Rd
