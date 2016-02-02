@@ -1,6 +1,6 @@
 We give some simple examples below to show the usages of each function in this package. 
 
-1. **Con-Stuart Trend Test**: 
+- **Con-Stuart Trend Test**: 
 ```
 cs.test(x, alternative = c("two.sided", "increasing", "decreasing"), exact = TRUE, correct = TRUE)
 ```
@@ -20,7 +20,7 @@ S = 8, p-value = 3.058e-06
 alternative hypothesis: data have a monotonic trend
 ```
 
-2. **Randomness Test**:
+- **Randomness Test**:
 ```
 runs.test(x, exact = FALSE, alternative = c("two.sided", "less", "greater"))
 ```
