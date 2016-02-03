@@ -139,3 +139,47 @@ $compare
 [2,] "1"   "3"   "YES"
 [3,] "2"   "3"   "NO" 
 ```
+
+- **Quantile Test**
+```
+quant.test(x, y = NULL, q, paired = FALSE, p = 0.5, alternative = c("two.sided", "less", "greater"), 
+          exact = FALSE, correct = TRUE)
+```
+This function examines the quantile of one-sample or two-sample data, i.e., whether the quantile of one-sample data is equal to some value, or whether the two-sample data have the same quantile. 
+```
+> x <- c(14.22, 15.83, 17.74, 19.88, 20.42, 21.96, 22.33, 22.79, 23.56, 24.45)  # one-sample test
+> quant.test(x, q = 19)  ## normal approximation test
+
+	Approximate one-sample quantile test
+
+data:  x
+location = 21.19, p-value = 0.2059
+alternative hypothesis: true location is not equal to 19
+
+> quant.test(x, q = 19, exact = TRUE)  ## exact quantile test 
+
+	Exact one-sample quantile test
+
+data:  x
+location = 21.19, p-value = 0.3438
+alternative hypothesis: true location is not equal to 19
+
+> y <- c(5.54, 5.52, 5.00, 4.89, 4.95, 4.85, 4.80, 4.78, 4.82, 4.85, 4.72, 4.48, 
+         4.39, 4.36, 4.30, 4.26, 4.25, 4.22)  # two-sample test
+> group <- as.numeric(gl(2,9))
+> quant.test(y, group, exact = TRUE)  ## independent two-sample test
+
+	Exact two-sample (Brown-Mood) quantile test
+
+data:  y with group group
+Difference = 0.53, p-value = 4.114e-05
+alternative hypothesis: true location shift is not equal to 0
+
+> quant.test(y,group, paired = TRUE)  ## paired two-sample test
+
+	Approximately paired two-sample quantile test
+
+data:  y with group group
+location = 0.55, p-value = 0.0027
+alternative hypothesis: true location is not equal to 0
+```
