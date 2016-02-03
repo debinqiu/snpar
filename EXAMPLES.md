@@ -41,7 +41,7 @@ data:  x
 Runs = 49, p-value = 0.6877
 alternative hypothesis: two.sided
 ```
-The second example examines the data generated from AR(1) process which is indeed not a random series.
+The second example examines the data generated from AR(1) process which is indeed not a random series. This is confirmed by the small p-value that we reject the null hypothesis.  
 ```
 > set.seed(123)
 > y <- arima.sim(list(order = c(1,0,0), ar = 0.7), n = 200)
