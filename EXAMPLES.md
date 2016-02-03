@@ -107,3 +107,35 @@ data:  y with group group
 statistic = 2.5419, p-value = 0.01103
 alternative hypothesis: true location is not equal to 0
 ```
+The third example is to test the true locations of each independent sample from different groups. The p-value (0.00622) shows that the true locations of each sample is different. More specifically, group 1 and 2 ("YES"), group 1 and 3 ("YES") are different in true locations, but group 2 and 3 ("NO") are not distinct. 
+```
+> z <- c(10.7, 10.8, 10.5, 10.9, 9.7, 14.5, 12.2, 12.4, 12.8, 12.7, 15.2, 12.3, 
+         13.5, 14.7, 15.6)
+> gr <- gl(3,5)
+> ns.test(z, gr, compared = TRUE)
+$data.name
+[1] "z with group gr"
+
+$method
+[1] "Multiple-sample normal score test"
+
+$statistic
+statistic 
+  10.1596 
+
+$p.value
+[1] 0.00622115
+
+$alternative
+[1] "at least one population is greater than at least one of the others"
+
+$parameter
+df 
+ 2 
+
+$compare
+     group group DIFF 
+[1,] "1"   "2"   "YES"
+[2,] "1"   "3"   "YES"
+[3,] "2"   "3"   "NO" 
+```
