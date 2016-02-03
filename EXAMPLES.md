@@ -145,7 +145,7 @@ $compare
 quant.test(x, y = NULL, q, paired = FALSE, p = 0.5, alternative = c("two.sided", "less", "greater"), 
           exact = FALSE, correct = TRUE)
 ```
-This function examines the quantile of one-sample or two-sample data, i.e., whether the quantile of one-sample data is equal to some value, or whether the two-sample data have the same quantile. 
+This function examines the quantile of one-sample or two-sample data, i.e., whether the quantile of one-sample data is equal to some value, or whether the two-sample data have the same quantile. The default of quantile is the median (`p = 0.5`).
 ```
 > x <- c(14.22, 15.83, 17.74, 19.88, 20.42, 21.96, 22.33, 22.79, 23.56, 24.45)  # one-sample test
 > quant.test(x, q = 19)  ## normal approximation test
@@ -182,4 +182,29 @@ alternative hypothesis: true location shift is not equal to 0
 data:  y with group group
 location = 0.55, p-value = 0.0027
 alternative hypothesis: true location is not equal to 0
+```
+- **Kernel Density and Distribution Estimation**:
+```
+kde(x, h, xgrid, ngrid, kernel = c("epan", "unif", "tria", "quar", 
+                                   "triw", "tric", "gaus", "cos"), plot = FALSE)  
+```
+This function is to compute the non-parametric kernel estimation of the probability density function (PDF) and cumulative distribution function (CDF).
+```
+> set.seed(123)
+> x <- rnorm(200,2,3)
+> kde(x, kernel = "quar", plot = TRUE)  # with default bandwidth
+> kde(x, h = 4, kernel = "quar", plot = TRUE)   # with specified bandwidth
+```
+
+
+- **Kernel Regression**:
+```
+kre(x, y, h, kernel = c("epan", "unif", "tria", "quar", "triw", "tric", "gaus", "cos"), plot = FALSE) 
+```
+This function is to fit a non-parametric relation between a pair of random variables by using kernel method.
+```
+> set.seed(123)
+> x <- rnorm(100)
+> y <- 1 + 4*x^2 + rnorm(100)
+> kr <- kre(x,y, kernel = "epan", plot = TRUE)
 ```
