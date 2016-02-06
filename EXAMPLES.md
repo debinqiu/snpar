@@ -1,3 +1,5 @@
+## Examples of `snpar` examples ##
+
 We give some simple examples below to show the usages of each function in this package. 
 
 - **Con-Stuart Trend Test**: 
