@@ -12,3 +12,4 @@ if (!require("devtools"))
   install.packages("devtools")
 devtools::install_github("debinqiu/snpar")
 ```
+You can see more details of each function in EXAMPLES.md file.
