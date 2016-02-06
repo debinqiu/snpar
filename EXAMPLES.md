@@ -245,7 +245,7 @@ data:  x
 D = 0.093034, p-value = 0.3522
 alternative hypothesis: two-sided
 ```
-Now we examine the test for two-sample data, which is to test if the two samples have the same distribution.
+Now we examine the test for two-sample data, which is to test if the two samples have the same distribution. The null hypothesis is that the two samples have the same distribution.
 ```
 > # two-sample Kolmogorov-Smirnov test
 > set.seed(123)
