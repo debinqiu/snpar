@@ -24,6 +24,7 @@ data:  x
 S = 8, p-value = 3.058e-06
 alternative hypothesis: data have a monotonic trend
 ```
+![trendx](https://cloud.githubusercontent.com/assets/16762941/12869162/0ecf2ec8-cce5-11e5-8927-2caa61452cec.png)
 
 - **Randomness Test**:
 ```
@@ -195,7 +196,8 @@ This function is to compute the non-parametric kernel estimation of the probabil
 > kde(x, kernel = "quar", plot = TRUE)  # with default bandwidth
 > kde(x, h = 4, kernel = "quar", plot = TRUE)   # with specified bandwidth
 ```
-
+![kde1](https://cloud.githubusercontent.com/assets/16762941/12869161/0ecdc088-cce5-11e5-95b9-7271a03493f1.png)
+![kde2](https://cloud.githubusercontent.com/assets/16762941/12869163/0ecf6140-cce5-11e5-8379-ef855d5a39ba.png)
 
 - **Kernel Regression**:
 ```
@@ -208,3 +210,4 @@ This function is to fit a non-parametric relation between a pair of random varia
 > y <- 1 + 4*x^2 + rnorm(100)
 > kr <- kre(x,y, kernel = "epan", plot = TRUE)
 ```
+![kre](https://cloud.githubusercontent.com/assets/16762941/12869164/0ecf7fa4-cce5-11e5-8906-38b5ff2fddc0.png)
