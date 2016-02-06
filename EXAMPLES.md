@@ -216,3 +216,54 @@ This function is to fit a non-parametric relation between a pair of random varia
 > kr <- kre(x,y, kernel = "epan", plot = TRUE)
 ```
 ![kre](https://cloud.githubusercontent.com/assets/16762941/12869164/0ecf7fa4-cce5-11e5-8906-38b5ff2fddc0.png)
+
+- **Kolmogorov-Smirnov Test**:
+```
+KS.test(x, y, ..., kernel = c("epan", "unif", "tria", "quar", "triw", "tric", "gaus", "cos"), hx, hy, 
+        alternative = c("two.sided", "less", "greater"))
+```
+This function performs a Kolmogorov-Smirnov test for one sample or two samples using kernel method. It is similar to `ks.test` for the default Kolmogorov-Smirnov test in R, but different in that `KS.test` uses the kernel method to estimate the CDF instead of empirical CDF. We first look at an example for one-sample test.
+```
+> # one-sample Kolmogorov-Smirnov test
+> set.seed(123)
+> x <- rnorm(100,2,3)
+> KS.test(x, "pnorm", 2, 3)
+
+	One-sample kernel Kolmogorov-Smirnov test
+
+data:  x
+D = 0.053588, p-value = 0.4681
+alternative hypothesis: two.sided
+
+> 
+> # compared with normal Kolmogorov-Smirnov test
+> ks.test(x, "pnorm", 2, 3)
+
+	One-sample Kolmogorov-Smirnov test
+
+data:  x
+D = 0.093034, p-value = 0.3522
+alternative hypothesis: two-sided
+```
+Now we examine the test for two-sample data, which is to test if the two samples have the same distribution.
+```
+> # two-sample Kolmogorov-Smirnov test
+> set.seed(123)
+> y <- rgamma(100,1,6)
+> KS.test(x,y)
+
+	Two-sample kernel Kolmogorov-Smirnov test
+
+data:  x and y
+D = 0.6031, p-value < 2.2e-16
+alternative hypothesis: two.sided
+
+> 
+> ks.test(x,y)
+
+	Two-sample Kolmogorov-Smirnov test
+
+data:  x and y
+D = 0.72, p-value < 2.2e-16
+alternative hypothesis: two-sided
+```
