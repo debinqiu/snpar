@@ -18,10 +18,10 @@ runs.test(x, exact = FALSE, alternative = c("two.sided", "less", "greater"))
 }
 }
 \details{
-Runs test examines the randomness of a numeric sequence \eqn{x} by studying the frequency of runs \eqn{R}. Generally, every numeric sequence can be transformed into dichotomous (binary) data defined as 0 and 1 by comparing each element of the sequence to its median (default threshold). Given \eqn{m} 0 and \eqn{n} 1, the runs \eqn{R} is defined as a series of similar responses and has a statistical distribution. See Wald, A. and Wolfowitz, J. (1940) for more details of this distribution. Based on the known distribution, the exact p-value can be computed for the data with small sample size. When the sample size is large, one can use the normal approximation (argument \code{exact = TRUE}) with mean \eqn{2mn/(m + n) +1} and variance \eqn{2mn(2mn - m - n)/((m + n)^2*(m + n - 1))}. The null of randomness is tested against the "under-mixing" trend and "over-mixing" trend by using alternative \code{"less"} and \code{"greater"}. Missing values have been removed.
+Runs test examines the randomness of a numeric sequence \eqn{x} by studying the frequency of runs \eqn{R}. Generally, every numeric sequence can be transformed into dichotomous (binary) data defined as 0 and 1 by comparing each element of the sequence to its median (default threshold). Given \eqn{m} 0 and \eqn{n} 1, the runs \eqn{R} is defined as a series of similar responses and has a statistical distribution. See Wald, A. and Wolfowitz, J. (1940) for more details of this distribution. Based on the known distribution, the exact p-value can be computed for the data with small sample size. When the sample size is large, one can use the normal approximation (argument \code{exact = FALSE}) with mean \eqn{2mn/(m + n) +1} and variance \eqn{2mn(2mn - m - n)/((m + n)^2*(m + n - 1))}. The null of randomness is tested against the "under-mixing" trend and "over-mixing" trend by using alternative \code{"less"} and \code{"greater"}. Missing values have been removed.
 }
 \value{
-A list with class "htest" containing the following components: 
+A list with class "htest" containing the following components:
   \item{data.name}{a character string giving the names of the data.}
   \item{method }{the type of test applied.}
   \item{alternative}{a character string describing the alternative hypothesis.}
